@@ -23,4 +23,10 @@ class User:
         '''
         return cls.user_list
 class  Credential:
-    
+    credential_list = []
+
+    def __init__(self, user_name, password, account):
+
+        self.username = user_name
+        self.password = password
+        self.account = account

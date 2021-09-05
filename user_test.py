@@ -52,3 +52,10 @@ class UserTest(unittest.TestCase):
         method that does clean up after test has run
         '''
         User.user_list = []
+    
+    class CredentialsTest(unittest.TestCase):
+        def setUp(self):
+            '''
+            method that runs before the test
+            '''
+            self.credential_list = Credentials('twitter', 'moses', 'password')

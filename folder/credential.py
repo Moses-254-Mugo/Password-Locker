@@ -21,3 +21,13 @@ class Credentials:
             if user.user_name == user_name and user.password == password:
                 verify_user = user.user_name
             return verify_user
+
+    def save_credentials(self):
+        Credentials.credential_list.append(self)
+
+    @classmethod
+    def search_user_credentials(cls, account):
+        for credential_list in cls.credentials_list:
+            if credential_list.account == account:
+                return credential_list.__repr__()
+                

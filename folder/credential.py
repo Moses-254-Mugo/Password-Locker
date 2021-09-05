@@ -42,3 +42,11 @@ class Credentials:
             if credential_list.account == account:
                 return True
             return False
+
+        
+    @classmethod
+    def delete_credentials(cls, account):
+        for credential_list in cls.credential_list:
+            if credential_list.account == account:
+                cls.credential_list.remove(credential_list)
+                return cls.credential_list

@@ -6,7 +6,7 @@
 Moses Kinyua Mugo
 
 ## Description 
-This is a app that enables users to store their password and also allows the user to create a new password. The app runs on the terminal and the user navigates through the app by using sort code on the terminal. 
+This is a app that enables users to store their password and also allows the user to create a new password. The app runs on the terminal and the user navigates through the app by using short code on the terminal. 
 
 ## Setup/ Installation Requirements
 The application requires this installation to operator

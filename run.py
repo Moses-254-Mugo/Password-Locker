@@ -64,7 +64,7 @@ def password_locker():
 
     if user_output == "1":
         print ("Nice! let'create a new account")
-        user_name =input("Entery_use your username: ")
+        user_name =input("Enter use your username: ")
         while True:
             pass_massage = """
             1. Create a password for the account\n

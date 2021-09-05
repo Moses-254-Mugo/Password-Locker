@@ -32,6 +32,7 @@ def create_credentials(account, user_name, password):
     return new_credentials
 
 def save_credentials(credential_list):
+
     Credentials.save_credentials(credential_list)
 
 def delete_credentials(credential_list):
@@ -59,7 +60,8 @@ def password_locker():
     2. Have a account already?\n
     '''
 
-    user_output  = input(message).lower.strip()
+    user_output  = input(message).lower(). strip()
+
     print(user_output)
 
     if user_output == "1":

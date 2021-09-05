@@ -12,7 +12,7 @@ class User:
         '''
         Method that saves a user
         '''
-        User.user_list.append()
+        User.user_list.append(self)
 
     @classmethod
     def display_user(cls):

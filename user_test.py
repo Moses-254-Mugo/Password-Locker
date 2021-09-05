@@ -24,6 +24,7 @@ class UserTest(unittest.TestCase):
         Test case to check if the new instance of the user object has been recreated
         '''
         User.user_list = []
+        
         self.user.save_user()
         self.assertEqual(len(User.user_list), 1)
 
@@ -76,8 +77,36 @@ class CredentialsTest(unittest.TestCase):
         self.assertEqual(len(Credentials.credential_list), 1)
     
     def test_save_multiple_credentials(self):
+        '''
+        test_save_multiple_credentials method checks for multiple credentials
+        '''
         Credentials.credential_list = []
         self.credential_list.save_credentials()
         test_credentials = Credentials('test', 'test', 'test')
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credential_list), 2)
+
+    def test_delete_credentials(self):
+        '''
+        test_delete_credentials method deletes credentials
+        '''
+        self.credential_list.save_credentials()
+        test_credentials = Credentials('test','test','test')
+        test_credentials.save_credentials()
+        self.credential_list.delete_credentials(test_credentials.account)
+        self.assertEqual(len(Credentials.credential_list), 1)
+
+    def test_find_credentials(self):
+        self.credential_list.save_credentials()
+        test_credentials = Credentials('test','test','test')
+        test_credentials.save_credentials()
+        found_credentials = Credentials.search_user_credentials('test')
+
+    def tearDown(self):
+        '''
+        method that does clean up after test has run
+        '''
+        Credentials.credential_list = []
+
+if __name__ == '__main__':
+    unittest.main()

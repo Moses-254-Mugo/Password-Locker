@@ -4,7 +4,7 @@ import random
 
 class Credentials: 
     '''
-    Test class the defines test cases form User class behaviour.
+    Test class the defines test cases for the  class behaviour.
     '''
 
     credential_list = []

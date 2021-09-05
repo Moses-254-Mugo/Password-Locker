@@ -35,3 +35,10 @@ class Credentials:
     def display_credentials(cls):
         # Add somethings here..
         return cls.credential_list
+
+    @classmethod
+    def check_if_credentials_exist(cls, account):
+        for credential_list in cls.credential_list:
+            if credential_list.account == account:
+                return True
+            return False

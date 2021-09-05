@@ -53,9 +53,31 @@ class UserTest(unittest.TestCase):
         '''
         User.user_list = []
     
-    class CredentialsTest(unittest.TestCase):
-        def setUp(self):
+class CredentialsTest(unittest.TestCase):
+
+    def setUp(self):
             '''
             method that runs before the test
             '''
             self.credential_list = Credentials('twitter', 'moses', 'password')
+
+    def test_create_credentials(self):
+    
+        self.assertEqual(self.credential_list.account, 'twitter')
+        self.assertEqual(self.credential_list.user_name, 'mose')
+        self.assertEqual(self.credential_list.password, 'password')
+
+    def test_save_credentials(self):
+        '''
+        test to check if saved credentials object are in our credential list
+        '''
+        Credentials.credential_list = []
+        self.credential_list.save_credentials()
+        self.assertEqual(len(Credentials.credential_list), 1)
+    
+    def test_save_multiple_credentials(self):
+        Credentials.credential_list = []
+        self.credential_list.save_credentials()
+        test_credentials = Credentials('test', 'test', 'test')
+        test_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credential_list), 2)

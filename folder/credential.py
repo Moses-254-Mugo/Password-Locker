@@ -50,3 +50,7 @@ class Credentials:
             if credential_list.account == account:
                 cls.credential_list.remove(credential_list)
                 return cls.credential_list
+
+    def generate_credentials(length=8):
+        password = string.ascii_lowercase + string.digits + string.ascii_uppercase + "':@!#$%^&*"
+        return ''.join(random.choice(password) for _ in range(length))
